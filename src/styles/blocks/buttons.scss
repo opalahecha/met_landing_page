@@ -1,0 +1,30 @@
+.button {
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 56px;
+  padding: 0 48px;
+  border: none;
+
+  font-family: Cinzel, serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 27px;
+  color: $main-text-color-white;
+  text-decoration: none;
+
+  background-color: $main-text-accent;
+
+  transition-duration: $effect-duration;
+
+  &:hover {
+    background-color: $button-hover-color;
+  }
+
+  &:active {
+    background-color: $button-pressed-color;
+  }
+}

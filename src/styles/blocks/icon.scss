@@ -1,0 +1,82 @@
+.icon {
+  position: relative;
+
+  display: block;
+
+  width: 24px;
+  height: 24px;
+
+  background-position: center;
+  background-size: cover;
+
+  @include hover(transform, scale(1.2));
+
+  @include on-tablet {
+    width: 32px;
+    height: 32px;
+  }
+
+  &--phone {
+    background-image: url(../images/icons/icon-phone-call.png);
+  }
+
+  &--menu {
+    background-image: url(../images/icons/icon-burger-menu.png);
+
+    &:hover {
+      background-image: url(../images/icons/icon-burger-menu-hover.png);
+    }
+  }
+
+  &--close {
+    background-image: url(../images/icons/icon-close.png);
+  }
+
+  &__contactables {
+    pointer-events: none;
+
+    position: absolute;
+    top: calc(100% + 12px);
+    right: -48px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    width: 180px;
+    padding-right: 16px;
+
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 16px;
+    color: $main-text-color-white;
+    text-align: right;
+    text-transform: uppercase;
+
+    opacity: 0;
+
+    @include on-tablet {
+      top: 50%;
+      right: 100%;
+      transform: translateY(-50%);
+      width: max-content;
+    }
+  }
+
+  &:hover &__contactables,
+  &:focus-within &__contactables {
+    pointer-events: all;
+    opacity: 1;
+  }
+
+  &__text {
+    margin: 0;
+    color: $main-text-color-white;
+    text-decoration: none;
+
+    &--link:hover {
+      color: $main-text-accent;
+      background-color: $form-bg-color;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+.online-explore {
+  &__exploring {
+    @include page-grid;
+
+    row-gap: 48px;
+  }
+
+  &__explore {
+    grid-column: 1 / -1;
+
+    @include on-tablet {
+      grid-column: 2 / -2;
+    }
+
+    @include on-desktop {
+      grid-column: span 4;
+    }
+  }
+}
+
+.explore {
+  text-align: center;
+
+  &__title {
+    padding-top: 24px;
+    font-size: 24px;
+    line-height: 140%;
+    color: $main-text-accent;
+
+    @include on-tablet {
+      padding-top: 32px;
+    }
+  }
+
+  &__description {
+    padding-top: 4px;
+
+    font-family: Roboto, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 27px;
+  }
+
+  &__picture-container {
+    overflow: hidden;
+  }
+
+  &__picture {
+    display: block;
+    width: 100%;
+    transition: transform $effect-duration;
+
+    .explore__picture-container:hover & {
+      transform: scale(1.05);
+    }
+  }
+}

@@ -1,0 +1,50 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+
+  &__field {
+    resize: none;
+
+    padding: 16px 14px;
+    border: 1px solid transparent;
+
+    font-family: Cinzel, serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 24px;
+
+    background-color: $form-bg-color;
+    outline: none;
+
+    &::placeholder {
+      color: $form-text-color;
+    }
+
+    &--message {
+      height: 144px;
+    }
+
+    &:hover {
+      border: 1px solid $form-border-color-hover;
+      color: $main-text-color;
+    }
+
+    &:active {
+      border: 1px solid $main-text-color;
+      color: $main-text-color;
+    }
+
+    &:-webkit-autofill,
+    &:-webkit-autofill:hover,
+    &:-webkit-autofill:focus {
+      box-shadow: 0 0 0 1000px $form-bg-color inset;
+
+      -webkit-text-fill-color: $main-text-color;
+    }
+  }
+
+  &__button {
+    margin-top: 16px;
+  }
+}
